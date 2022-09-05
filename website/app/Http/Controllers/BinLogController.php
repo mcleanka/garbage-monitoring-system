@@ -13,7 +13,7 @@ class BinLogController extends Controller
      */
     public function index()
     {
-        //
+        return view('pages.bin-log.index');
     }
 
     /**
