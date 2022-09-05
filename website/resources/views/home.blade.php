@@ -14,7 +14,7 @@
   <link href="{{ asset('home/assets/img/apple-touch-icon.png') }}) }}" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,600,600i,700,700i|Satisfy|Comic+Neue:300,300i,400,400i,700,700i" rel="stylesheet">
+  {{-- <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,600,600i,700,700i|Satisfy|Comic+Neue:300,300i,400,400i,700,700i" rel="stylesheet"> --}}
 
   <!-- Vendor CSS Files -->
   <link href="{{ asset('home/assets/vendor/animate.css/animate.min.css') }}" rel="stylesheet">
@@ -62,9 +62,25 @@
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
 
-      <a href="{{ route("login") }}" class="book-a-table-btn scrollto">
-        Login
-      </a>
+      @if (Auth::check())
+         <a href="{{ route("dashboard.index") }}" class="book-a-table-btn scrollto">
+          Dashboard
+        </a>
+
+        <form method="POST" action="{{ route('logout') }}">
+          @csrf
+
+          <x-dropdown-link :href="route('logout')"
+              onclick="event.preventDefault();
+                    this.closest('form').submit();">
+            {{ __('Log Out') }}
+          </x-dropdown-link>
+        </form>
+      @else
+        <a href="{{ route("login") }}" class="book-a-table-btn scrollto">
+          Login
+        </a>
+      @endif
 
     </div>
   </header><!-- End Header -->

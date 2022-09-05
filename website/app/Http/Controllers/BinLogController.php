@@ -32,7 +32,7 @@ class BinLogController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return 'saved';
     }
 
     /**

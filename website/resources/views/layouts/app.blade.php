@@ -5,12 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
-
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link rel="shortcut icon" href="img/icons/icon-48x48.png" />
-
-        <link rel="canonical" href="https://demo-basic.adminkit.io/" />
+        <title>{{ config('app.name', 'GMS') }}</title>
 
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
@@ -23,21 +18,35 @@
         <!-- Scripts -->
         <script src="{{ asset('assets/js/app.js') }}" defer></script>
     </head>
-    <body class="font-sans antialiased">
-        <div class="min-h-screen bg-gray-100">
-            @include('layouts.navigation')
+    <body>
+       	<div class="wrapper">
+            {{-- sibe bar --}}
+            @include('layouts.navigation', [
+                    'isActive' => $active ?? route('dashboard.index'),
+                ])
 
-            <!-- Page Heading -->
-            <header class="bg-white shadow">
-                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                    {{ $header }}
-                </div>
-            </header>
+            <div class="main">
+                
+                @include('layouts.top-nav')
 
-            <!-- Page Content -->
-            <main>
-                {{ $slot }}
-            </main>
+                <!-- Page Content -->
+                <main class="content">
+                    {{ $slot }}
+                </main>
+
+                <footer class="footer">
+                    <div class="container-fluid">
+                        <div class="row text-muted">
+                            <div class="col-6 text-start">
+                                <p class="mb-0">
+                                    <a class="text-muted" href="javascript:void(0)"><strong>Garbage</strong></a> - <a class="text-muted" href="javascript:void(0)"><strong> Monitoring System</strong></a> &copy; All rights reserved.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+
+            </div>
         </div>
     </body>
 </html>
