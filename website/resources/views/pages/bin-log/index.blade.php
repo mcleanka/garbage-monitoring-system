@@ -13,10 +13,11 @@
 						<thead>
 							<tr>
 								<th>ID</th>
-								<th class="d-none d-xl-table-cell">Start Date</th>
-								<th class="d-none d-xl-table-cell">End Date</th>
+								<th>Bin Name</th>
+								<th>Location</th>
+								<th>Percentage</th>
 								<th>Status</th>
-								<th class="d-none d-md-table-cell">Action</th>
+								<th>Date</th>
 							</tr>
 						</thead>
 						<tbody></tbody>

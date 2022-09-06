@@ -15,6 +15,9 @@ class CreateBinLogsTable extends Migration
     {
         Schema::create('bin_logs', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('bin_id');
+            $table->string("status");
+            $table->string("percentage");
             $table->timestamps();
         });
     }
