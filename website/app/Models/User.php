@@ -38,6 +38,8 @@ class User extends Authenticatable
      * @var array<string, string>
      */
     protected $casts = [
+        'created_at' => 'date',
+        'updated_at' => 'date',
         'email_verified_at' => 'datetime',
     ];
 }

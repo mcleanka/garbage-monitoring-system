@@ -14,10 +14,11 @@ class BinLogFactory extends Factory
     public function definition()
     {
         return [
-            'bin_id' => $this->faker->unique(true)->numberBetween(1, 2),
+            'bin_id' => 1,
             'status' => $this->faker->unique(true)->numberBetween(1, 2),
             'percentage' => $this->faker->randomFloat(2, 1, 50),
-            'created_at' => $this->faker->dateTime(),
+            'created_at' => now(),
+            // 'created_at' => $this->faker->dateTime(),
         ];
     }
 }

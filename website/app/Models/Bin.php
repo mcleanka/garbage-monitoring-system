@@ -11,6 +11,6 @@ class Bin extends Model
 
     public function level()
     {
-        return $this->hasMany(BinLog::class, 'bin_id', 'id');
+        return $this->hasMany(BinLog::class, 'bin_id', 'id')->latest();
     }
 }

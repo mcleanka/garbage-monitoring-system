@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
+use DataTables;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -10,8 +12,41 @@ class UserController extends Controller
      * Display a listing of the resource.
      *
      */
-    public function index()
+    public function index(Request $request)
     {
+        if ($request->ajax()) {
+            $data = User::latest()->get();
+
+            return DataTables::of($data)
+                ->addIndexColumn()
+                ->addColumn('created_on', function ($row) {
+                    if ($row->created_at) {
+                        return $row->created_at->diffForHumans();
+                    }
+
+                    return '--';
+                })
+                ->addColumn('verified', function ($row) {
+                    if ($row->email_verified_at) {
+                        return '<span class="badge bg-success">Yes</span>';
+                    }
+
+                    return '<span class="badge bg-danger">No</span>';
+                })
+                ->addColumn('updated_on', function ($row) {
+                    if ($row->updated_at) {
+                        return $row->updated_at->diffForHumans();
+                    }
+
+                    return '--';
+                })
+                ->addColumn('action', function ($row) {
+                    return '<a href="' . route("user.show", $row->id) . '" class="btn btn-success btn-sm"> <i class="fa fa-view"></i> View</a>';
+                })
+                ->rawColumns(['action', 'verified'])
+                ->make(true);
+        }
+
         return view('pages.user.index');
     }
 
@@ -21,7 +56,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.user.create');
     }
 
     /**

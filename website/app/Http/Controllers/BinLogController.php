@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Bin;
 use App\Models\BinLog;
 use DataTables;
 use Illuminate\Http\Request;
@@ -48,17 +49,31 @@ class BinLogController extends Controller
      */
     public function store(Request $request)
     {
+        // bin_id
+        // status
+        // percentage
+        BinLog::create($request->all());
+
         return 'saved';
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\BinLog  $binLog
      */
-    public function show(BinLog $binLog)
+    public function show($id)
     {
-        //
+        $bin = Bin::with('level')->find($id);
+        $log = $bin->level->first() ?? [];
+
+        return response()->json(
+            [
+                "name" => $bin->name,
+                "log" => [
+                    "distance" => $log->percentage ?? 0,
+                    "time" => $log->created_at->format('H:i a') ?? now(),
+                ],
+            ], 200);
     }
 
     /**

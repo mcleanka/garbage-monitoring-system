@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Bin;
+use App\Models\BinLog;
 use App\Models\Dashboard;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -14,10 +16,23 @@ class DashboardController extends Controller
      */
     public function index()
     {
+        $activeBin = Bin::find(1);
         $bins = Bin::with('level')->get();
+
+        $yearlyData = BinLog::get()
+            ->groupBy(function ($row) {
+                return Carbon::parse($row->created_at)->format('m');
+            })->map(function ($row) {
+
+            return $row->count();
+        })
+            ->sortKeys()
+            ->values();
 
         return view('pages.dashboard.index', [
             "bins" => $bins,
+            "activeBin" => $activeBin,
+            "yearlyData" => $yearlyData,
         ]);
     }
 
@@ -45,9 +60,9 @@ class DashboardController extends Controller
      *
      * @param  \App\Models\Dashboard  $dashboard
      */
-    public function show(Dashboard $dashboard)
+    public function show($id)
     {
-        //
+        return BinLog::get();
     }
 
     /**
