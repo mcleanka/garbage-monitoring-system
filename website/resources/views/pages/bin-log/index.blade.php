@@ -5,7 +5,48 @@
 		<h1 class="h3 mb-3">
 			Bin Logs
 		</h1>
+
+		<div class="col-12 col-lg-12 col-xxl-12 d-flex">
+			<div class="card flex-fill">
+				<div class="card-body">
+					<table class="table table-hover my-0" id="bin-log-datatable">
+						<thead>
+							<tr>
+								<th>ID</th>
+								<th class="d-none d-xl-table-cell">Start Date</th>
+								<th class="d-none d-xl-table-cell">End Date</th>
+								<th>Status</th>
+								<th class="d-none d-md-table-cell">Action</th>
+							</tr>
+						</thead>
+						<tbody></tbody>
+					</table>
+				</div>
+			</div>
+		</div>
 	
 	</div>
+
+	<script type="text/javascript">
+		$(function () {
+			const table = $('#bin-log-datatable').DataTable({
+				processing: true,
+				serverSide: true,
+				ajax: "{{ route('bin-log.index') }}",
+				columns: [
+					{data: 'DT_RowIndex', name: 'DT_RowIndex'},
+					{data: 'name', name: 'name'},
+					{data: 'email', name: 'email'},
+					{data: 'dob', name: 'dob'},
+					{
+						data: 'action', 
+						name: 'action', 
+						orderable: true, 
+						searchable: true
+					},
+				]
+			});
+		});
+	</script>
 
 </x-app-layout>

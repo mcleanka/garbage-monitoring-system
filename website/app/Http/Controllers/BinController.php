@@ -13,7 +13,9 @@ class BinController extends Controller
      */
     public function index()
     {
-        return view('pages.bin.index');
+        $bins = Bin::all();
+
+        return view('pages.bin.index', ["bins" => $bins]);
     }
 
     /**
@@ -22,7 +24,7 @@ class BinController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.bin.create');
     }
 
     /**
