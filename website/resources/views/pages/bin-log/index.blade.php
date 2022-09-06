@@ -36,15 +36,11 @@
 				ajax: "{{ route('bin-log.index') }}",
 				columns: [
 					{data: 'DT_RowIndex', name: 'DT_RowIndex'},
-					{data: 'name', name: 'name'},
-					{data: 'email', name: 'email'},
-					{data: 'dob', name: 'dob'},
-					{
-						data: 'action', 
-						name: 'action', 
-						orderable: true, 
-						searchable: true
-					},
+					{data: 'bin.name', name: 'bin.name'},
+					{data: 'bin.location', name: 'bin.location'},
+					{data: 'percentage', name: 'percentage'},
+					{data: 'status', name: 'status'},
+					{data: 'date', name: 'date'},
 				]
 			});
 		});

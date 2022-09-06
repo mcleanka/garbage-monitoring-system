@@ -15,10 +15,13 @@ class BinLogController extends Controller
     public function index(Request $request)
     {
         if ($request->ajax()) {
-            $data = BinLog::latest()->get();
+            $data = BinLog::latest()->with("bin")->get();
 
             return DataTables::of($data)
                 ->addIndexColumn()
+                ->addColumn('date', function ($row) {
+                    return $row->created_at->diffForHumans();
+                })
                 ->addColumn('action', function ($row) {
                     return '<a href="' . route("bin-log.show", $row->id) . '" class="btn btn-success btn-sm"> <i class="fa fa-view"></i> View</a>';
                 })
