@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Bin;
 use App\Models\Dashboard;
 use Illuminate\Http\Request;
 
@@ -13,7 +14,11 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('pages.dashboard.index');
+        $bins = Bin::with('level')->get();
+
+        return view('pages.dashboard.index', [
+            "bins" => $bins,
+        ]);
     }
 
     /**

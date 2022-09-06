@@ -11,6 +11,6 @@ class BinLog extends Model
 
     public function bin()
     {
-        return $this->belongsTo(Bin::class);
+        return $this->hasMany(Bin::class);
     }
 }
