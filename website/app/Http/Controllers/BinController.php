@@ -13,7 +13,7 @@ class BinController extends Controller
      */
     public function index()
     {
-        $bins = Bin::all();
+        $bins = Bin::with('level')->latest()->get();
 
         return view('pages.bin.index', ["bins" => $bins]);
     }
@@ -44,7 +44,9 @@ class BinController extends Controller
      */
     public function show(Bin $bin)
     {
-        //
+        return view('pages.bin.show', [
+            'bin' => $bin,
+        ]);
     }
 
     /**

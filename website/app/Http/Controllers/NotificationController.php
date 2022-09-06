@@ -13,7 +13,11 @@ class NotificationController extends Controller
      */
     public function index()
     {
-        return view('pages.notification.index');
+        $notifications = Notification::latest()->get();
+
+        return view('pages.notification.index', [
+            'notifications' => $notifications,
+        ]);
     }
 
     /**

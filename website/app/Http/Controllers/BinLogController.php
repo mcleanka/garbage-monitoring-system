@@ -2,10 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\BinEmail;
 use App\Models\Bin;
 use App\Models\BinLog;
+use App\Models\User;
 use DataTables;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Response;
 
 class BinLogController extends Controller
 {
@@ -47,14 +51,65 @@ class BinLogController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      */
-    public function store(Request $request)
+    /* public function store(Request $request)
     {
-        // bin_id
-        // status
-        // percentage
-        BinLog::create($request->all());
 
-        return 'saved';
+    } */
+
+    /**
+     * Save a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     */
+    public function save(Request $request)
+    {
+        $validator = \Validator::make($request->all(), [
+            'bin_id' => 'required',
+            'percentage' => 'required',
+        ]);
+
+        if (!$validator->fails()) {
+
+            $status = 0;
+
+            if ($status) {
+                $status = "Full";
+            } elseif ($status == 50) {
+                $status = "Half Full";
+            } elseif ($status) {
+                $status = "Almost Empty";
+            } else {
+                $status = "Empty";
+            }
+
+            $log = BinLog::create([
+                'status' => $status,
+                'bin_id' => $request->bin_id,
+                'percentage' => $request->percentage,
+            ]);
+
+            $users = User::all();
+
+            #TODO:: if bin is full send notification
+            foreach ($users as $key => $user) {
+                Mail::to($user->email)
+                    ->later(now()->addMinutes(1), new BinEmail([
+                        "bin" => Bin::find($request->bin_id),
+                        'level' => $request->percentage,
+                        'status' => $status,
+                    ]));
+            }
+
+            return response()->json([
+                "status" => ($log->id && true),
+                "message" => "Bin Log saved successfully!!!",
+            ], 200);
+        } else {
+            return response()->json([
+                "status" => false,
+                "message" => $validator->errors(),
+            ], 200);
+        }
     }
 
     /**
