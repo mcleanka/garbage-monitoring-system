@@ -24,7 +24,7 @@
 									</a>
 								</div>
 							</div>
-							<h4 class="mt-0 mb-1"> <span class="text-muted">Total Height:</span> {{ $bin->capacity }}Meters</h4>
+							<h4 class="mt-0 mb-1"> <span class="text-muted">Location:</span> {{ $bin->location }}</h4>
 
 							<div class="mb-0">
 								<span class="text-danger">

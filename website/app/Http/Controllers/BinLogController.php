@@ -70,34 +70,39 @@ class BinLogController extends Controller
 
         if (!$validator->fails()) {
 
-            $status = 0;
+            $status = "Full"; // red
+            $percentage = $request->percentage ?? 0;
 
-            if ($status) {
-                $status = "Full";
-            } elseif ($status == 50) {
-                $status = "Half Full";
-            } elseif ($status) {
-                $status = "Almost Empty";
-            } else {
-                $status = "Empty";
+            $level = 100 - $percentage;
+
+            if ($level <= 0) {
+                $status = "Empty"; // green
+            } elseif ($level > 0 && $level < 49.9) {
+                $status = "Almost Empty"; // blue
+            } elseif ($level > 50 && $level < 99.9) {
+                $status = "Almost Full"; // orange
             }
 
             $log = BinLog::create([
                 'status' => $status,
                 'bin_id' => $request->bin_id,
-                'percentage' => $request->percentage,
+                'percentage' => $level,
             ]);
 
-            $users = User::all();
+            if ($level >= 80) {
+                $users = User::all();
 
-            #TODO:: if bin is full send notification
-            foreach ($users as $key => $user) {
-                Mail::to($user->email)
-                    ->later(now()->addMinutes(1), new BinEmail([
-                        "bin" => Bin::find($request->bin_id),
-                        'level' => $request->percentage,
-                        'status' => $status,
-                    ]));
+                foreach ($users as $key => $user) {
+                    Mail::to($user->email)
+                        ->later(now()->addMinutes(1), new BinEmail([
+                            "bin" => Bin::find($request->bin_id),
+                            'level' => $level,
+                            'status' => $status,
+                        ]));
+                }
+
+                #TODO:: send notification
+
             }
 
             return response()->json([
