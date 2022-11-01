@@ -155,12 +155,22 @@
                 We are a team of three (two boys and one girl) in our final year pursuing a bachelor's degree (HONS) in electrical and electronics engineering at Malawi University of Business and Applied Science (MUBAS) formally called Polytechnic
               </p>
               <p class="fst-italic">
-                Our system was developed after observing that there was accumulation and overflowing of  garbage in various garbage bins  across our cities and towns. Upon doing research on some of the causes,we found that apart from waste management officials lacking enough resources to run their day-to-day operations, they lack real time information on status of various bins located in different locations and thus unable to effectively manage and collect wastes.This results in bins overflowing ,unhygienic environments and outbreak of various diseases.             </p>
+                Our system was developed after observing that there was accumulation and overflowing of  garbage in various garbage bins  across our cities and towns. Upon doing research on some of the causes,we found that apart from waste management officials lacking enough resources to run their day-to-day operations, they lack real time information on status of various bins located in different locations and thus unable to effectively manage and collect wastes.This results in bins overflowing ,unhygienic environments and outbreak of various diseases.</p>
+
+                <div>
+                  <p class="strong">MAIN OBJECTIVE</p>
+                    Our project's goal is to create and implement a garbage monitoring system that will prevent waste accumulation in cities, particularly densely populated townships.
+                </div>
+                
+                <div class="mt-2">
+                  <p class="strong">SPECIFIC OBJECTIVES</p>
+
               <ul>
-                <li><i class="bx bx-check-double"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-                <li><i class="bx bx-check-double"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-                <li><i class="bx bx-check-double"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
+                <li><i class="bx bx-check-double"></i> Develop a model that can detect trash levels in trash cans and send that data to the cloud, where it can be accessed by users.</li>
+                <li><i class="bx bx-check-double"></i> Develop hardware that can be placed on top of trash cans to detect trash levels.</li>
+                <li><i class="bx bx-check-double"></i> Write a code that will be utilized in a microcontroller to interpret data from a sensor built into the hardware and send that interpreted data to the cloud for users to read and use</li>
               </ul>
+                </div>
               <p>
                 We are optimistic for a future where people live healthier, and thus ably contribute to the development of our nation and we believe this system will act as a great tool in the management of wastes and improving the overall hygiene status.
               </p>
@@ -189,7 +199,7 @@
               <div class="pic"><img src="{{ asset('home/assets/img/team/needy.jpg') }}" class="img-fluid" alt=""></div>
               <div class="member-info">
                 <h4>Levisonie Mphepo</h4>
-                <span>Master </span>
+                <span>Student</span>
                 <div class="social">
                   <a href=""><i class="bi bi-twitter"></i></a>
                   <a href=""><i class="bi bi-facebook"></i></a>
@@ -205,7 +215,7 @@
               <div class="pic"><img src="{{ asset('home/assets/img/team/kbanda.jpg') }}" class="img-fluid" alt=""></div>
               <div class="member-info">
                 <h4>Elizabeth Banda</h4>
-                <span>Patissier</span>
+                <span>Student</span>
                 <div class="social">
                   <a href=""><i class="bi bi-twitter"></i></a>
                   <a href=""><i class="bi bi-facebook"></i></a>
@@ -221,7 +231,7 @@
               <div class="pic"><img src="{{ asset('home/assets/img/team/dish.jpeg') }}" class="img-fluid" alt=""></div>
               <div class="member-info">
                 <h4>Dalitso Sawati</h4>
-                <span>Cook</span>
+                <span>Student</span>
                 <div class="social">
                   <a href=""><i class="bi bi-twitter"></i></a>
                   <a href=""><i class="bi bi-facebook"></i></a>
@@ -247,8 +257,7 @@
       </div>
 
       <div class="map">
-        <iframe style="border:0; width: 100%; height: 350px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3838.9871514956485!2d35.036655614384415!3d-15.804631489044903!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x18d84f5f89e76969%3A0xc3fa44653bf7b16a!2sThe%20Malawi%20Polytechnic%20-%20Chichiri%20Campus!5e0!3m2!1sen!2sbg!4v1664099404267!5m2!1sen!2sbg" frameborder="0" allowfullscreen></iframe>
-
+        <iframe style="border:0; width: 100%; height: 350px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3838.9826576088517!2d35.037427793683335!3d-15.804868434448714!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xbd78d9ea42b2255a!2sPolytechnic%20(MUBAS)%2C%20Chichiri%20Campus%2C%20School%20Of%20Built%20Environment!5e0!3m2!1sen!2sbg!4v1667327056972!5m2!1sen!2sbg" frameborder="0" allowfullscreen></iframe>
       </div>
 
       <div class="container mt-5">
