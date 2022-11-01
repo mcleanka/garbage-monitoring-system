@@ -11,7 +11,10 @@
 				<div class="w-100">
 					<div class="row">
 
-						@empty(!$bins)
+						@empty($bins)
+							
+							<p>No bins available</p>
+						@else
 							@foreach ($bins as $key => $bin)
 								<div class="col-sm-6">
 									<div class="card">
@@ -49,8 +52,6 @@
 									</div>
 								</div>
 							@endforeach
-						@else
-							<p>No bins available</p>
 						@endempty
 
 					</div>
