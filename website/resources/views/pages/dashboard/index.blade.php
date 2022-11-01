@@ -137,7 +137,7 @@
 		
 		const getData = function() {
 			$.ajax({
-				url: "{{ route("bin-log.show", $activeBin->id ?? null) }}",
+				url: "{{ route("bin-log.show", $activeBin->id ?? 100) }}",
 				success: (data) => {
 					trashBins.data
 							.labels
