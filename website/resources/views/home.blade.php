@@ -55,7 +55,6 @@
         <ul>
           <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
           <li><a class="nav-link scrollto" href="#about">About Us</a></li>
-          <li><a class="nav-link scrollto" href="#our-statistics">Statistics</a></li>
           <li><a class="nav-link scrollto" href="#our-team">Our Team</a></li>
           <li><a class="nav-link scrollto" href="#contact">Contact Us</a></li>
         </ul>
@@ -95,42 +94,30 @@
         <div class="carousel-inner" role="listbox">
 
           <!-- Slide 1 -->
-          <div class="carousel-item active" style="background-image: url({{ asset('home/assets/img/slide/slide-1.jpg') }}) }};">
+          <div class="carousel-item active" style="background-image: url({{ asset('home/assets/img/slide/bin.jpg') }});">
             <div class="carousel-container">
               <div class="carousel-content">
                 <h2 class="animate__animated animate__fadeInDown"><span>Garbage</span> Monitoring System</h2>
-                <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
+                <p class="animate__animated animate__fadeInUp">This is an innovative project idea that is basically there to maintain clean environment around our cities. Through this system user (city council) will be furnished with real time data on various garbage levels of bins located in different locations, thus making it possible to plan more efficient routes for the trash collectors who empty the bins.</p>
                 <div>
-                  <a href="#menu" class="btn-menu animate__animated animate__fadeInUp scrollto">Our Menu</a>
-                  <a href="#book-a-table" class="btn-book animate__animated animate__fadeInUp scrollto">Book a Table</a>
+                  <a href="#about" class="btn-menu animate__animated animate__fadeInUp scrollto">About Us</a>
+                  <a href="{{ route("login") }}" class="btn-book animate__animated animate__fadeInUp scrollto">Sign In</a>
                 </div>
               </div>
             </div>
           </div>
 
           <!-- Slide 2 -->
-          <div class="carousel-item" style="background-image: url({{ asset('home/assets/img/slide/slide-2.jpg') }}) }};">
+          <div class="carousel-item" style="background-image: url({{ asset('home/assets/img/slide/bin-2.jpg') }});">
             <div class="carousel-container">
               <div class="carousel-content">
-                <h2 class="animate__animated animate__fadeInDown">Lorem Ipsum Dolor</h2>
-                <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
+                <h2 class="animate__animated animate__fadeInDown">GMS</h2>
+                <p class="animate__animated animate__fadeInUp">
+                  The system will also lower the chance of any bin being full for a long period of time without being attended to, thus reducing the garbage overflow which inturn ensures hygiene of the surrounding. 
+                </p>
                 <div>
-                  <a href="#menu" class="btn-menu animate__animated animate__fadeInUp scrollto">Our Menu</a>
-                  <a href="#book-a-table" class="btn-book animate__animated animate__fadeInUp scrollto">Book a Table</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Slide 3 -->
-          <div class="carousel-item" style="background-image: url({{ asset('home/assets/img/slide/slide-3.jpg') }}) }};">
-            <div class="carousel-container">
-              <div class="carousel-content">
-                <h2 class="animate__animated animate__fadeInDown">Sequi ea ut et est quaerat</h2>
-                <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
-                <div>
-                  <a href="#menu" class="btn-menu animate__animated animate__fadeInUp scrollto">Our Menu</a>
-                  <a href="#book-a-table" class="btn-book animate__animated animate__fadeInUp scrollto">Book a Table</a>
+                  <a href="#about" class="btn-menu animate__animated animate__fadeInUp scrollto">About Us</a>
+                  <a href="{{ route("login") }}" class="btn-book animate__animated animate__fadeInUp scrollto">Sign In</a>
                 </div>
               </div>
             </div>
@@ -158,30 +145,24 @@
 
         <div class="row">
 
-          <div class="col-lg-5 align-items-stretch video-box" style='background-image: url("{{ asset('home/assets/img/about.jpg') }}" }});'>
-            <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"></a>
-          </div>
+          <div class="col-lg-5 align-items-stretch video-box" style='background-image: url("{{ asset('home/assets/img/group.jpeg') }}" );'></div>
 
           <div class="col-lg-7 d-flex flex-column justify-content-center align-items-stretch">
 
             <div class="content">
-              <h3>Eum ipsam laborum deleniti <strong>velit pariatur architecto aut nihil</strong></h3>
+              <h3><strong>About Us</strong></h3>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
+                We are a team of three (two boys and one girl) in our final year pursuing a bachelor's degree (HONS) in electrical and electronics engineering at Malawi University of Business and Applied Science (MUBAS) formally called Polytechnic
               </p>
               <p class="fst-italic">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                magna aliqua.
-              </p>
+                Our system was developed after observing that there was accumulation and overflowing of  garbage in various garbage bins  across our cities and towns. Upon doing research on some of the causes,we found that apart from waste management officials lacking enough resources to run their day-to-day operations, they lack real time information on status of various bins located in different locations and thus unable to effectively manage and collect wastes.This results in bins overflowing ,unhygienic environments and outbreak of various diseases.             </p>
               <ul>
                 <li><i class="bx bx-check-double"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
                 <li><i class="bx bx-check-double"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
                 <li><i class="bx bx-check-double"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
               </ul>
               <p>
-                Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                culpa qui officia deserunt mollit anim id est laborum
+                We are optimistic for a future where people live healthier, and thus ably contribute to the development of our nation and we believe this system will act as a great tool in the management of wastes and improving the overall hygiene status.
               </p>
             </div>
 
@@ -192,112 +173,6 @@
       </div>
     </section><!-- End About Section -->
     
-    <!-- ======= our-statistics Section ======= -->
-    <section id="our-statistics" class="our-statistics">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Check our tasty <span>Menu</span></h2>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-12 d-flex justify-content-center">
-            <ul id="menu-flters">
-              <li data-filter="*" class="filter-active">Show All</li>
-              <li data-filter=".filter-starters">Starters</li>
-              <li data-filter=".filter-salads">Salads</li>
-              <li data-filter=".filter-specialty">Specialty</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="row menu-container">
-
-          <div class="col-lg-6 menu-item filter-starters">
-            <div class="menu-content">
-              <a href="#">Lobster Bisque</a><span>$5.95</span>
-            </div>
-            <div class="menu-ingredients">
-              Lorem, deren, trataro, filede, nerada
-            </div>
-          </div>
-
-          <div class="col-lg-6 menu-item filter-specialty">
-            <div class="menu-content">
-              <a href="#">Bread barrel</a><span>$6.95</span>
-            </div>
-            <div class="menu-ingredients">
-              Lorem, deren, trataro, filede, nerada
-            </div>
-          </div>
-
-          <div class="col-lg-6 menu-item filter-starters">
-            <div class="menu-content">
-              <a href="#">Crab Cake</a><span>$7.95</span>
-            </div>
-            <div class="menu-ingredients">
-              A delicate crab cake served on a toasted roll with lettuce and tartar sauce
-            </div>
-          </div>
-
-          <div class="col-lg-6 menu-item filter-salads">
-            <div class="menu-content">
-              <a href="#">Caesar Selections</a><span>$8.95</span>
-            </div>
-            <div class="menu-ingredients">
-              Lorem, deren, trataro, filede, nerada
-            </div>
-          </div>
-
-          <div class="col-lg-6 menu-item filter-specialty">
-            <div class="menu-content">
-              <a href="#">Tuscan Grilled</a><span>$9.95</span>
-            </div>
-            <div class="menu-ingredients">
-              Grilled chicken with provolone, artichoke hearts, and roasted red pesto
-            </div>
-          </div>
-
-          <div class="col-lg-6 menu-item filter-starters">
-            <div class="menu-content">
-              <a href="#">Mozzarella Stick</a><span>$4.95</span>
-            </div>
-            <div class="menu-ingredients">
-              Lorem, deren, trataro, filede, nerada
-            </div>
-          </div>
-
-          <div class="col-lg-6 menu-item filter-salads">
-            <div class="menu-content">
-              <a href="#">Greek Salad</a><span>$9.95</span>
-            </div>
-            <div class="menu-ingredients">
-              Fresh spinach, crisp romaine, tomatoes, and Greek olives
-            </div>
-          </div>
-
-          <div class="col-lg-6 menu-item filter-salads">
-            <div class="menu-content">
-              <a href="#">Spinach Salad</a><span>$9.95</span>
-            </div>
-            <div class="menu-ingredients">
-              Fresh spinach with mushrooms, hard boiled egg, and warm bacon vinaigrette
-            </div>
-          </div>
-
-          <div class="col-lg-6 menu-item filter-specialty">
-            <div class="menu-content">
-              <a href="#">Lobster Roll</a><span>$12.95</span>
-            </div>
-            <div class="menu-ingredients">
-              Plump lobster meat, mayo and crisp lettuce on a toasted bulky roll
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section><!-- End Menu Section -->
   
     <!-- ======= Chefs Section ======= -->
     <section id="our-team" class="chefs">
@@ -305,17 +180,15 @@
 
         <div class="section-title">
           <h2>Our <span>Team</span></h2>
-          <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae
-            autem.</p>
         </div>
 
         <div class="row">
 
           <div class="col-lg-4 col-md-6">
             <div class="member">
-              <div class="pic"><img src="{{ asset('home/assets/img/chefs/chefs-1.jpg') }}" class="img-fluid" alt=""></div>
+              <div class="pic"><img src="{{ asset('home/assets/img/team/needy.jpg') }}" class="img-fluid" alt=""></div>
               <div class="member-info">
-                <h4>Levison Mphepo</h4>
+                <h4>Levisonie Mphepo</h4>
                 <span>Master </span>
                 <div class="social">
                   <a href=""><i class="bi bi-twitter"></i></a>
@@ -329,9 +202,9 @@
 
           <div class="col-lg-4 col-md-6">
             <div class="member">
-              <div class="pic"><img src="{{ asset('home/assets/img/chefs/chefs-2.jpg') }}" class="img-fluid" alt=""></div>
+              <div class="pic"><img src="{{ asset('home/assets/img/team/kbanda.jpg') }}" class="img-fluid" alt=""></div>
               <div class="member-info">
-                <h4>Eliza Banda</h4>
+                <h4>Elizabeth Banda</h4>
                 <span>Patissier</span>
                 <div class="social">
                   <a href=""><i class="bi bi-twitter"></i></a>
@@ -345,7 +218,7 @@
 
           <div class="col-lg-4 col-md-6">
             <div class="member">
-              <div class="pic"><img src="{{ asset('home/assets/img/chefs/chefs-3.jpg') }}" class="img-fluid" alt=""></div>
+              <div class="pic"><img src="{{ asset('home/assets/img/team/dish.jpeg') }}" class="img-fluid" alt=""></div>
               <div class="member-info">
                 <h4>Dalitso Sawati</h4>
                 <span>Cook</span>
@@ -370,12 +243,12 @@
 
         <div class="section-title">
           <h2><span>Contact</span> Us</h2>
-          <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae autem.</p>
         </div>
       </div>
 
       <div class="map">
-        <iframe style="border:0; width: 100%; height: 350px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" allowfullscreen></iframe>
+        <iframe style="border:0; width: 100%; height: 350px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3838.9871514956485!2d35.036655614384415!3d-15.804631489044903!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x18d84f5f89e76969%3A0xc3fa44653bf7b16a!2sThe%20Malawi%20Polytechnic%20-%20Chichiri%20Campus!5e0!3m2!1sen!2sbg!4v1664099404267!5m2!1sen!2sbg" frameborder="0" allowfullscreen></iframe>
+
       </div>
 
       <div class="container mt-5">
@@ -397,13 +270,13 @@
             <div class="col-lg-3 col-md-6 info mt-4 mt-lg-0">
               <i class="bi bi-envelope"></i>
               <h4>Email:</h4>
-              <p>info@example.com<br>contact@example.com</p>
+              <p>beee16-lmphepo@poly.ac.mw{{-- <br>bece16-dsawati@poly.ac.mw --}}</p>
             </div>
 
             <div class="col-lg-3 col-md-6 info mt-4 mt-lg-0">
               <i class="bi bi-phone"></i>
               <h4>Call:</h4>
-              <p>+1 5589 55488 51<br>+1 5589 22475 14</p>
+              <p>+265 9968 7 55<br>+265 994 645 6 84</p>
             </div>
           </div>
         </div>
@@ -440,7 +313,7 @@
   <footer id="footer">
     <div class="container">
       <h3>GMS</h3>
-      <p>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.</p>
+      {{-- <p>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.</p> --}}
       <div class="social-links">
         <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
         <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
