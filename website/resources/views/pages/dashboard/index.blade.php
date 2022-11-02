@@ -12,7 +12,6 @@
 					<div class="row">
 
 						@empty($bins)
-							
 							<p>No bins available</p>
 						@else
 							@foreach ($bins as $key => $bin)
