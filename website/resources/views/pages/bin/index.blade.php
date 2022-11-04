@@ -4,6 +4,7 @@
 
 		<h1 class="h3 mb-3">
 			Bins
+			<a href="{{ route('bin.create') }}" class="btn btn-primary float-end">Add One</a>
 		</h1>
 	
 		<div class="row">

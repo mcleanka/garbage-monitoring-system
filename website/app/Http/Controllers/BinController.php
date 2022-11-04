@@ -34,7 +34,15 @@ class BinController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $bin = new Bin;
+
+        $bin->name = $request->name;
+        $bin->location = $request->location;
+        $bin->capacity = $request->capacity;
+
+        $bin->save();
+
+        return back()->with("success", "Bin add successfully!");
     }
 
     /**
