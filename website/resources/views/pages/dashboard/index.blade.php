@@ -11,8 +11,8 @@
 				<div class="w-100">
 					<div class="row">
 
-						@empty($bins)
-							<p>No bins available</p>
+						@if(empty($bins))
+							<p>No bins available <a href="{{ route("bin.create") }}">Add One</a></p>
 						@else
 							@foreach ($bins as $key => $bin)
 								<div class="col-sm-6">
@@ -51,7 +51,7 @@
 									</div>
 								</div>
 							@endforeach
-						@endempty
+						@endif
 
 					</div>
 				</div>
