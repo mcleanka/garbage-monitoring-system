@@ -13,7 +13,7 @@ GPIO_ECHO = 24
 GPIO.setup(GPIO_TRIGGER, GPIO.OUT)
 GPIO.setup(GPIO_ECHO, GPIO.IN)
 
-url = "http://127.0.0.1:8000/api/bin-log/store"
+url = "http://18.234.226.102:81/api/bin-log/save"
 
 
 def distance():
