@@ -151,7 +151,7 @@
 
 					trashBins.update();
 
-					$("#bin-level-{{ $activeBin->id }}").text(data.log.distance)
+					$("#bin-level-{{ $activeBin->id }}").text(`${data.log.distance}%`)
 				}
 			});
 		};
