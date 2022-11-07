@@ -152,7 +152,7 @@
 					trashBins.update();
 
 					$("#bin-level-{{ $activeBin->id }}").text(`${data.log.distance}%`)
-					$("#bin-log-time-{{ $activeBin->id }}").text(`${data.log.time}%`)
+					$("#bin-log-time-{{ $activeBin->id }}").text(`${data.log.time}`)
 				}
 			});
 		};
