@@ -41,7 +41,7 @@
 												</span>
 													@if ($bin->level->first())
 													<span class="text-muted">
-														{{ $bin->level->first()->created_at->diffForHumans() ?? '--' }}
+														<span id="bin-log-time-{{ $bin->id }}">{{ $bin->level->first()->created_at->diffForHumans() ?? '--' }}</span>
 													</span>
 													@else
 													<span class="text-muted">
@@ -152,6 +152,7 @@
 					trashBins.update();
 
 					$("#bin-level-{{ $activeBin->id }}").text(`${data.log.distance}%`)
+					$("#bin-log-time-{{ $activeBin->id }}").text(`${data.log.time}%`)
 				}
 			});
 		};
