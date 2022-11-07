@@ -35,7 +35,9 @@
 											<div class="mb-0">
 												<span class="text-danger">
 													<i class="mdi mdi-arrow-bottom-right"></i>
-													{{ $bin->level->first()->percentage ?? 0 }}%
+													<span id="bin-level-{{ $bin->id }}">
+														{{ $bin->level->first()->percentage ?? 0 }}%
+													</span>
 												</span>
 													@if ($bin->level->first())
 													<span class="text-muted">
@@ -148,6 +150,8 @@
 							.push(data.log.distance);
 
 					trashBins.update();
+
+					$("bin-level-{{ $activeBin->id }}").text(data.log.distance)
 				}
 			});
 		};
