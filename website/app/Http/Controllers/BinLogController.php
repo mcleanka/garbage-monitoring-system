@@ -71,7 +71,7 @@ class BinLogController extends Controller
         if (!$validator->fails()) {
 
             $status = "Full"; // red
-            $percentage = $request->percentage ?? 0;
+            $percentage = (int)$request->percentage ?? 0;
 
             $level = 100 - $percentage;
 
