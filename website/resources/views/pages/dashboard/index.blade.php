@@ -85,6 +85,7 @@
 					</div>
 				</div>
 			</div>
+			
 			<div class="col-8 d-flex">
 				<div class="card flex-fill w-100">
 					<div class="card-header">
