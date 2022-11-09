@@ -73,7 +73,7 @@ class BinLogController extends Controller
             $status = "Full"; // red
             $percentage = (int) $request->percentage ?? 0;
 
-            $level = 34 - $percentage;
+            $level = (35 - $percentage) * 100 / 35;
 
             if ($level <= 0) {
                 $status = "Empty"; // green
